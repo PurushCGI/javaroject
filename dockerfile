@@ -1,3 +1,3 @@
-FROM java:11.0
+FROM openjdk:11
 COPY src/javaProj/devopsTest.java ./
 CMD [ "java", ".src/javaProj/devopsTest.java" ]
