@@ -1,3 +1,3 @@
-FROM openjdk:11
-COPY .src/javaroj/devopsTest.java ./
-CMD [ "java", ".src/javaroj/devopsTest.java" ]
+FROM java:11.0
+COPY src/javaProj/devopsTest.java ./
+CMD [ "java", ".src/javaProj/devopsTest.java" ]
