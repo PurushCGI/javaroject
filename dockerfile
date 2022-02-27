@@ -1,5 +1,9 @@
 FROM openjdk:11
 COPY src/javaProj/devopsTest.java ./
-HEALTHCHECK --interval=30s --timeout=3s \
-  CMD curl -f http://localhost/ || exit 1
+healthcheck:
+  test: ["CMD", "curl", "-f", "http://localhost"]
+  interval: 1m30s
+  timeout: 10s
+  retries: 3
+  start_period: 40s
 CMD [ "java", ".src/javaProj/devopsTest.java" ]
